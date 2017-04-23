@@ -19,7 +19,8 @@ RUN mkdir -p $CONDA_DIR && \
     rm ${conda_version}-Linux-x86_64.sh
 
 # Python env
-RUN pip install ipdb pytest xmltodict pytest-cov python-coveralls coverage pytest-xdist pep8 pytest-pep8 pydot_ng jedi nose rednose && \
+RUN pip install ipdb pytest xmltodict pytest-cov python-coveralls coverage pytest-xdist pep8 pytest-pep8 pydot_ng jedi
+nose rednose Flask && \
     conda install Pillow scikit-image scikit-learn notebook pandas seaborn matplotlib pyyaml six h5py && \
     pip install https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-${tensorflow_version}-linux_x86_64.whl && \
     pip install keras && \
