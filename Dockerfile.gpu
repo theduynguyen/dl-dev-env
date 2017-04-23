@@ -7,6 +7,8 @@ ARG tensorflow_version=0.12.1-cp27-none
 ENV CONDA_DIR /opt/conda
 ENV PATH $CONDA_DIR/bin:$PATH
 
+RUN apt-get update && apt-get install -y bzip2 
+
 RUN mkdir -p $CONDA_DIR && \
     echo export PATH=$CONDA_DIR/bin:'$PATH' > /etc/profile.d/conda.sh && \
     apt-get update && \
