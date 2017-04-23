@@ -18,10 +18,9 @@ RUN mkdir -p $CONDA_DIR && \
     rm ${conda_version}-Linux-x86_64.sh
 
 # Python env
-RUN pip install ipdb pytest xmltodict pytest-cov python-coveralls coverage pytest-xdist pep8 pytest-pep8 pydot_ng jedi
-nose rednose Flask && \
+RUN pip install ipdb pytest xmltodict pytest-cov python-coveralls coverage pytest-xdist pep8 pytest-pep8 pydot_ng jedi nose rednose Flask && \
     conda install Pillow scikit-image scikit-learn notebook pandas seaborn matplotlib pyyaml six h5py && \
-    pip install --upgrade tensorflow && \
+    pip install tensorflow && \
     pip install keras && \
     conda clean -yt
 
